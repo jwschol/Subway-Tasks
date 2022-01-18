@@ -167,9 +167,8 @@ Module Program
     End Sub
     Sub summary()
         Clear()
-        Math.Round(cost, 2)
         WriteLine("----------Order summary----------")
-        WriteLine(cost)
+        WriteLine("{0:f2}", cost)
         WriteLine(length1)
         WriteLine(topping1)
         WriteLine(bread)
