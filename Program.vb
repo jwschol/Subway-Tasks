@@ -16,7 +16,7 @@ Module Program
         cost = 0
         Try
             WriteLine("Welcome to subway.")
-            WriteLine("Would you like it to be 6 inch or 12 inch")
+            WriteLine("Would you like your bread to be (6) inch or (12) inch")
             length = ReadLine()
             If length = 6 Then
                 WriteLine("6 inch bread")
@@ -32,6 +32,7 @@ Module Program
                 breadselection()
             Else
                 WriteLine("Invalid Input, pleasde try again")
+                Sleep(600)
                 Main()
             End If
         Catch ex As Exception
@@ -76,6 +77,7 @@ Module Program
                 toppingselection()
             Else
                 WriteLine("Invalid Input, please try again")
+                Sleep(600)
                 breadselection()
             End If
         Catch ex As Exception
@@ -134,6 +136,7 @@ Module Program
                 inorouteat()
             Else
                 WriteLine("Invalid Input, please try again")
+                Sleep(600)
                 toppingselection()
             End If
         Catch ex As Exception
@@ -146,11 +149,11 @@ Module Program
     Sub inorouteat()
         Clear()
         Try
-            WriteLine("eat in or out")
+            WriteLine("Would you like to (1) eat in or (2) eat out")
             inourout1 = ReadLine()
             If inourout1 = 1 Then
-                WriteLine("")
-                cost = 105% * cost
+                WriteLine(cost)
+                cost = 1.05 * cost
             ElseIf inourout1 = 2 Then
                 WriteLine("")
                 cost = cost
@@ -167,8 +170,11 @@ Module Program
     End Sub
     Sub summary()
         Clear()
+        Sleep(210)
+        BackgroundColor = ConsoleColor.Black
+        ForegroundColor = ConsoleColor.Green
         WriteLine("----------Order summary----------")
-        WriteLine("{0:f2}", cost)
+        WriteLine("£{0:f2}", cost)
         WriteLine(length1)
         WriteLine(topping1)
         WriteLine(bread)
